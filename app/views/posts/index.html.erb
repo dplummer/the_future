@@ -4,9 +4,11 @@
 
 <%= link_to 'New Post', new_post_path %>
 
-<% @posts.each do |post| %>
-  <h2><%= post.title %></h2>
-  <h4>By: <%= post.author %>, <abbr title="<%= post.created_at %>"><%= time_ago_in_words(post.created_at) %> ago</abbr></h4>
-  <p><%= post.body %></p>
-  <hr />
-<% end %>
+<div ng-controller="PostsCtrl">
+  <div ng-repeat="post in posts">
+    <h2>{{ post.title }}</h2>
+    <h4>By: {{ post.author }}, <abbr title="{{post.created_at}}">{{ post.created_at }}</abbr></h4>
+    <p>{{ post.body }}</p>
+    <hr />
+  </div>
+</div>
