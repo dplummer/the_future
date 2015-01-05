@@ -1,12 +1,12 @@
-<p id="notice"><%= notice %></p>
+<h1>The Future Board</h1>
 
-<h1>The Future</h1>
+<p id="notice"><%= notice %></p>
 
 <%= link_to 'New Post', new_post_path %>
 
 <% @posts.each do |post| %>
   <h2><%= post.title %></h2>
-  <h4>By: <%= post.author %></h4>
+  <h4>By: <%= post.author %>, <abbr title="<%= post.created_at %>"><%= time_ago_in_words(post.created_at) %> ago</abbr></h4>
   <p><%= post.body %></p>
   <hr />
 <% end %>
