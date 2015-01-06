@@ -5,6 +5,6 @@
     'futureApp.controllers',
     ]);
 
-  angular.module('futureApp.controllers', []);
+  angular.module('futureApp.controllers', ['angularMoment']);
 
 }.call(this));
